@@ -2,12 +2,12 @@
 
 <template>
   <nav>
-    <ul>
+    <ul class="flex">
         <li>
-            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink class="pr-4" to="/">Home</NuxtLink>
         </li>
         <li>
-            <NuxtLink to="/about">About</NuxtLink>
+            <NuxtLink class="px-4" to="/about">About</NuxtLink>
         </li>
     </ul>
   </nav>
