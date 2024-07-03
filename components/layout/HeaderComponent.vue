@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <header class="bg-white shadow-md py-4">
+  <header class="bg-white shadow-md p-4">
     <div class="md:container md:mx-auto flex justify-between items-center">
         <div class="img">
             <svg width="100%" height="100%" viewBox="0 0 1538 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
