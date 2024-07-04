@@ -23,4 +23,5 @@
             <img :src="small" alt="Hero Image" class="w-full object-cover">
         </picture>
     </figure>
+    <slot/>
 </template>
