@@ -41,7 +41,7 @@
                     </g>
                 </svg>
             </NuxtLink>
-            <LayoutNavigationComponent class="hidden lg:block"></LayoutNavigationComponent>
+            <LayoutNavigationComponent></LayoutNavigationComponent>
         </div>
     </header>
 </template>

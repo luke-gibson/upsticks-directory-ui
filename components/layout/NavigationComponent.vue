@@ -4,16 +4,7 @@
   <nav>
     <ul class="flex">
         <li>
-            <NuxtLink class="pr-4 text-gray-800 hover:text-[#E2883C] transition-colors duration-300" to="/estate-agent">Estate Agents</NuxtLink>
-        </li>
-        <li>
-            <NuxtLink class="px-4 text-gray-800 hover:text-[#E2883C] transition-colors duration-300" to="/about">Mortgage Brokers</NuxtLink>
-        </li>
-        <li>
-            <NuxtLink class="px-4 text-gray-800 hover:text-[#E2883C] transition-colors duration-300" to="/">Conveyancers</NuxtLink>
-        </li>
-        <li>
-            <NuxtLink class="px-4 text-gray-800 hover:text-[#E2883C] transition-colors duration-300" to="/">Removals</NuxtLink>
+            <NuxtLink class="text-gray-800 hover:text-[#E2883C] transition-colors duration-300 font-bold flex items-center" to="/estate-agent"><span class="mr-0 md:mr-2"><IconsAddUser></IconsAddUser></span> <span class="hidden md:block">Business Registration</span></NuxtLink>
         </li>
     </ul>
   </nav>
