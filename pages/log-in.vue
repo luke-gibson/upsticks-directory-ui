@@ -7,7 +7,7 @@
     small="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720210549/upsticks%20diredtory/mobile-home-page_v2r3y7.jpg"
   >
     <figcaption class="absolute z-10 top-1/2 transform translate-y-[-50%] left-2 right-2">
-      <h1 class="text-5xl font-bold text-white">Business Login</h1>
+      <h1 class="text-3xl font-bold text-white">Business Login</h1>
     </figcaption>
   </HeroComponent>
 
@@ -23,7 +23,7 @@
       <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="Jane Doe">
     </div>
   </div>
-  <div class="md:flex md:items-center mb-6">
+  <div class="md:flex md:items-center mb-4">
     <div class="md:w-1/3">
       <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
         Password
@@ -33,6 +33,9 @@
       <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password" type="password" placeholder="******************">
     </div>
   </div>
+  <div class="text-sm text-center ml-2 mb-6">
+        <NuxtLink class="text-[#2B5773] hover:text-[#37759c]" to="/">Forgotten password?</NuxtLink>
+    </div>
   <div class="md:flex md:items-center">
     <div class="md:w-1/3"></div>
     <div class="md:w-2/3">
@@ -40,6 +43,6 @@
         Sign In
       </button>
     </div>
-  </div>
+  </div>    
 </form></section>
 </template>
