@@ -33,10 +33,10 @@
       <h2 class="text-gray-800 text-4xl font-extrabold text-center mb-4">
         Find your moving solutions
       </h2>
-      <p class="text-gray-800 text-center mb-16 text-base max-w-[600px] mx-auto">
+      <p class="text-gray-800 text-center mb-14 text-base max-w-[600px] mx-auto">
         The UK’s finest companies are here to help get you moving, providing top-notch services and solutions tailored to meet your unique needs.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-md:max-w-md mx-auto">
+      <div class="flex justify-center flex-wrap">
         <CardComponent>
           <IconsEstateAgent></IconsEstateAgent>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Estate Agents</h3>
@@ -73,6 +73,27 @@
         <CardComponent>
           <IconsRemovalsVue></IconsRemovalsVue>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Removals</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Tailor our product to suit your needs Tailor our product to suit your needs.
+          </p>
+          <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/" >
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+          </NuxtLink>
+        </CardComponent>
+
+        <CardComponent>
+          <IconsGraph></IconsGraph>
+          <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Energy Performance Certificates</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Tailor our product to suit your needs Tailor our product to suit your needs.
+          </p>
+          <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/" >
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+          </NuxtLink>
+        </CardComponent>
+        <CardComponent>
+          <IconsTools></IconsTools>
+          <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Property Surveyors</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Tailor our product to suit your needs Tailor our product to suit your needs.
           </p>
