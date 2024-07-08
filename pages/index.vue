@@ -13,14 +13,7 @@
           Search the UK's finest choice of estate agents, conveyancers, removals and mortgage brokers
         </p>
         <div class="mt-10">
-          <input
-            type="email"
-            placeholder="Enter postcode, town or city"
-            class="w-full sm:w-96 bg-gray-50 py-3.5 px-4 text-[#333] text-base focus:outline-none rounded"
-          />
-          <NuxtLink to="/search-results" class="max-sm:mt-8 sm:ml-4 bg-[#E2883C] hover:bg-[#be7335] text-[#2B5773] text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none">
-            Search
-          </NuxtLink>
+          <Search/>
         </div>
       </div>
     </figcaption>
@@ -80,7 +73,7 @@
         </CardComponent>
 
         <CardComponent>
-          <IconsGraph></IconsGraph>
+          <IconsGraph/>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">EPCs</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Tailor our product to suit your needs Tailor our product to suit your needs.
