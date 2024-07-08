@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     preset: 'cloudflare-pages'
   },
 
+  supabase: {
+    redirect: false,
+  },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/image",
