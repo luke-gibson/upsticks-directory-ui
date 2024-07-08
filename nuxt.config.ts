@@ -5,6 +5,12 @@ export default defineNuxtConfig({
     preset: 'cloudflare-pages'
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/supabase"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/image",
+    "@nuxtjs/supabase",
+    "@nuxt/eslint",
+    "@vueform/nuxt",
+  ],
   compatibilityDate: "2024-07-04"
 })
