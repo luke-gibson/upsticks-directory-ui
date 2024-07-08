@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useContactsStore } from '~/stores/ContactsStores';
+
 type LngLat = {
   lng: number;
   lat: number;
@@ -8,6 +10,7 @@ type LngLat = {
 // todo - move this out of the component
 const route = useRoute();
 const router = useRouter();
+const contactsStore = useContactsStore();
 const client = useSupabaseClient();
 const formattedQuery = ref(route.query.q);
 
@@ -74,13 +77,11 @@ watch(businessType, () => {
                   </option>
                 </select>
               </div>
-              <pre>
-                {{ branches }}</pre>
               <template v-if="branches.length > 0">
-                <!-- <pre>{{ branches }}</pre>
                 <ul v-for="branch in branches">
-                  <li>{{ branch.business.name }} | {{ branch.name }}</li>
-                </ul> -->
+                  <li>{{ branch.business.name }} | {{ branch.name }} </li>
+                  <button @click="contactsStore.add(branch)">Add to group</button>
+                </ul>
               </template>
               <template v-else>
                 no results
@@ -128,6 +129,11 @@ watch(businessType, () => {
         <aside class="bg-white border rounded-lg shadow md:ml-10 p-8 w-full md:w-1/3 md:sticky top-0">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Group Contacts</h5>
           <p>Add Estate Agents to your group contact and email them together with your requests.</p>
+
+
+          <pre>
+            {{ contactsStore.contacts.map((c) => c.name) }}
+          </pre>
         </aside>
       </div>
     </section>

@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/supabase",
     "@nuxt/eslint",
+    "@pinia/nuxt"
   ],
   compatibilityDate: "2024-07-04"
 })
