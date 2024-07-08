@@ -74,8 +74,8 @@ watch(businessType, () => {
                   </option>
                 </select>
               </div>
-<pre>
-  {{ branches }}</pre>
+              <pre>
+                {{ branches }}</pre>
               <template v-if="branches.length > 0">
                 <!-- <pre>{{ branches }}</pre>
                 <ul v-for="branch in branches">
