@@ -19,9 +19,9 @@ const props = defineProps({
   <section>
     <figure class="relative w-full bg-[#f2f2f2] overflow-hidden">
       <picture>
-        <source :srcset="large" media="(min-width: 1024px)" />
-        <source :srcset="medium" media="(min-width: 768px)" />
-        <img :src="small" alt="Hero Image" class="w-full object-cover" />
+        <source :srcset="large" media="(min-width: 1024px)" >
+        <source :srcset="medium" media="(min-width: 768px)" >
+        <img :src="small" alt="Hero Image" class="w-full object-cover" >
       </picture>
       <slot />
     </figure>

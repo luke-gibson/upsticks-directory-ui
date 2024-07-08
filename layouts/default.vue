@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <LayoutHeaderComponent></LayoutHeaderComponent>
+    <LayoutHeaderComponent/>
     <slot/>
-    <LayoutFooterComponent></LayoutFooterComponent>
+    <LayoutFooterComponent/>
 </template>

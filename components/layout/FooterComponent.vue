@@ -10,16 +10,16 @@
     </div>
     <div class="flex md:justify-end justify-center md:mt-0 mt-4 w-full md:w-1/2">
       <NuxtLink to="/" class="mx-2 hover:text-[#E2883C] transition-colors">
-        <IconsFacebook></IconsFacebook>
+        <IconsFacebook/>
       </NuxtLink>
       <NuxtLink to="/" class="mx-2 hover:text-[#E2883C] transition-colors">
-        <IconsXsocial></IconsXsocial>
+        <IconsXsocial/>
       </NuxtLink>
       <NuxtLink to="/" class="mx-2 hover:text-[#E2883C] transition-colors">
-        <IconsInstagram></IconsInstagram>
+        <IconsInstagram/>
       </NuxtLink>
       <NuxtLink to="/" class="mx-2 hover:text-[#E2883C] transition-colors">
-        <IconsYoutube></IconsYoutube>
+        <IconsYoutube/>
       </NuxtLink>
     </div>
   </footer>
