@@ -12,8 +12,7 @@
     </figcaption>
   </HeroComponent>
 
-  <section>
-  </section>
+  <section/>
 
   <section class="mx-auto py-16 px-4 flex flex-col bg-[#f2f2f2] min-h-[50vh]">
     <div class="md:container mx-auto flex flex-wrap items-start relative">

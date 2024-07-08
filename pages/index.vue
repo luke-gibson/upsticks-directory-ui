@@ -36,46 +36,46 @@
       </p>
       <div class="flex justify-center flex-wrap">
         <CardComponent>
-          <IconsEstateAgent></IconsEstateAgent>
+          <IconsEstateAgent/>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Estate Agents</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Tailor our product to suit your needs Tailor our product to suit your needs.
           </p>
           <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/estate-agent">
-            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow/></span>
           </NuxtLink>
         </CardComponent>
 
         <CardComponent>
-          <IconsMortgageBroker></IconsMortgageBroker>
+          <IconsMortgageBroker/>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Mortgage Brokers</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Your data is protected by the latest security measures.
           </p>
           <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/">
-            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow/></span>
           </NuxtLink>
         </CardComponent>
 
         <CardComponent>
-          <IconsConveyancing></IconsConveyancing>
+          <IconsConveyancing/>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Conveyancers</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Experience blazing-fast performance with our product.
           </p>
           <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/">
-            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow/></span>
           </NuxtLink>
         </CardComponent>
 
         <CardComponent>
-          <IconsRemovalsVue></IconsRemovalsVue>
+          <IconsRemovalsVue/>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Removals</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Tailor our product to suit your needs Tailor our product to suit your needs.
           </p>
           <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/" >
-            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow/></span>
           </NuxtLink>
         </CardComponent>
 
@@ -86,17 +86,17 @@
             Tailor our product to suit your needs Tailor our product to suit your needs.
           </p>
           <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/" >
-            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow/></span>
           </NuxtLink>
         </CardComponent>
         <CardComponent>
-          <IconsTools></IconsTools>
+          <IconsTools/>
           <h3 class="text-gray-800 text-xl font-semibold mb-3 mt-3">Property Surveyors</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Tailor our product to suit your needs Tailor our product to suit your needs.
           </p>
           <NuxtLink class="flex items-center font-bold mt-3 text-[#2B5773] hover:text-[#E2883C] transition-all" to="/" >
-            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow></IconsRightArrow></span>
+            read more <span class="inline-block ml-3 pt-1"><IconsRightArrow/></span>
           </NuxtLink>
         </CardComponent>
       </div>
@@ -104,6 +104,6 @@
   </section>
 
   <section class="bg-[#f2f2f2] pb-16">
-    <IconsGreyLogo class="container mx-auto w-72"></IconsGreyLogo>
+    <IconsGreyLogo class="container mx-auto w-72"/>
   </section>
 </template>

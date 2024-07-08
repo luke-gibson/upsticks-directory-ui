@@ -41,7 +41,7 @@
                     </g>
                 </svg>
             </NuxtLink>
-            <LayoutNavigationComponent></LayoutNavigationComponent>
+            <LayoutNavigationComponent/>
         </div>
     </header>
 </template>
