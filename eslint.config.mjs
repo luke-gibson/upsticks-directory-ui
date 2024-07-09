@@ -10,6 +10,8 @@ export default withNuxt(
       'vue/component-tags-order': ['error', {
         'order': [ 'script', 'template', 'style' ]
       }],
+      'object-curly-spacing': ['error', 'always'],
+      'comma-spacing': ['error', { 'before': false, 'after': true }],
       'keyword-spacing': ['error', { 'before': true, 'after': true }],
     },
   },

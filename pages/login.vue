@@ -1,4 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const client = useSupabaseClient();
+const email = ref('');
+const password = ref('');
+const uiError = ref('');
+
+const login = async () => {
+  const { error } = await client.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  });
+
+  if (error) uiError.value = error;
+
+  navigateTo('/account');
+};
+
+</script>
 
 <template>
   <div>
@@ -11,6 +28,20 @@
         <h1 class="text-3xl font-bold text-white">Business Login</h1>
       </figcaption>
     </HeroComponent>
+
+    <div class="border-4">
+
+      <CmpSpacer>
+        <div v-if="uiError">
+          {{ uiError }}
+        </div>
+        <CmpHeading h="3">Login</CmpHeading>
+        email: <input v-model="email" type="text">
+        password: <input v-model="password" type="text">
+        <button @click="login">login</button>
+      </CmpSpacer>
+    </div>
+
     <section class="mx-auto bg-[#f2f2f2] h-[50vh]">
       <form class="w-full max-w-sm mx-auto py-20">
         <div class="md:flex md:items-center mb-6">
