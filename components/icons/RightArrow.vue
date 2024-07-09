@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  name: "MaterialSymbolsLightLineEndArrowNotchRounded",
+};
+</script>
+
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24">
     <path
@@ -6,9 +12,3 @@
     />
   </svg>
 </template>
-
-<script lang="ts">
-export default {
-  name: "MaterialSymbolsLightLineEndArrowNotchRounded",
-};
-</script>

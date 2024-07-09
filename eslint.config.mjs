@@ -5,6 +5,11 @@ export default withNuxt(
   {
     rules: {
       'semi': ['error', 'always'],
+      'vue/multi-word-component-names': 'off',
+      'vue/component-tags-order': ['error', {
+        'order': [ 'script', 'template', 'style' ]
+      }],
+      'keyword-spacing': ['error', { 'before': true, 'after': true }],
     },
   },
 );
