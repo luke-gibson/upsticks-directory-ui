@@ -3,7 +3,7 @@
 <template>
   <article
         href="#"
-        class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row px-6 mb-6 py-6 md:py-0"
+        class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row mb-6 "
       >
         <slot/>
       </article>

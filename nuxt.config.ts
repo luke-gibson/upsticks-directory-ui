@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   },
 
   extends: [
-    // '../celestials',
-    ['gh:NovaMantis/celestials#master', { auth: process.env.GITHUB_TOKEN }],
+    '../celestials',
+    //['gh:NovaMantis/celestials#master', { auth: process.env.GITHUB_TOKEN }],
   ],
 
   modules: [

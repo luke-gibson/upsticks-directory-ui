@@ -29,7 +29,7 @@ const login = async () => {
       </figcaption>
     </HeroComponent>
 
-    <div class="border-4">
+    <!-- <div class="border-4">
 
       <CmpSpacer>
         <div v-if="uiError">
@@ -40,21 +40,20 @@ const login = async () => {
         password: <input v-model="password" type="text">
         <button @click="login">login</button>
       </CmpSpacer>
-    </div>
+    </div> -->
 
     <section class="mx-auto bg-[#f2f2f2] h-[50vh]">
       <form class="w-full max-w-sm mx-auto py-20">
         <div class="md:flex md:items-center mb-6">
           <div class="md:w-1/3">
             <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-              Full Name
+              Email Address
             </label>
           </div>
           <div class="md:w-2/3">
-            <input
-id="inline-full-name"
+            <input v-model="email"
                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                   type="text" value="Jane Doe">
+                   type="text">
           </div>
         </div>
         <div class="md:flex md:items-center mb-4">
@@ -64,10 +63,9 @@ id="inline-full-name"
             </label>
           </div>
           <div class="md:w-2/3">
-            <input
-id="inline-password"
+            <input v-model="password"
                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                   type="password" placeholder="******************">
+                   type="password">
           </div>
         </div>
         <div class="text-sm text-center ml-2 mb-6">
@@ -76,8 +74,8 @@ id="inline-password"
         <div class="md:flex md:items-center">
           <div class="md:w-1/3" />
           <div class="md:w-2/3">
-            <button
-class="transition-colors bg-[#E2883C] hover:bg-[#be7335] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            <button @click="login"
+                    class="transition-colors bg-[#E2883C] hover:bg-[#be7335] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button">
               Sign In
             </button>
