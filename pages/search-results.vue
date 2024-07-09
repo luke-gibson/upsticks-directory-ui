@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { useContactsStore } from '~/stores/ContactsStores';
 
-type LngLat = {
-  lng: number;
-  lat: number;
-};
-
 // POC
 // todo - move this out of the component
 const route = useRoute();
@@ -26,19 +21,30 @@ const { data } = await useFetch(`https://api.postcodes.io/postcodes/${route.quer
 
 const { data: businessTypes } = await client.from('business_type').select('*');
 const businessType = ref(route.query.type ?? businessTypes[0].id);
+const distanceKm = ref(route.query.distance ?? 15);
 
 // todo where clause for business type
-const { data: branches } = await client.from('branch').select(`
-    *,
-    business:business_id (
-      *,
-      business_type:business_type_id (*)
-    )
-  `);
+const { data: branches, status } = useAsyncData(
+  'branches',
+  async () => {
+    const { data } = await client.rpc('nearby_branches', {
+      long: -1.062477,
+      lat: 50.898349,
+    })
+    .lt('dist_meters', distanceKm.value * 1000)
+    .eq('business_type_id', businessType.value)
+    return data;
+  },
+  { watch: [businessType, distanceKm] }
+)
 
 
-watch(businessType, () => {
-  router.push({ path: route.path, query: { ...route.query, type: businessType.value } });
+watch([businessType, distanceKm], () => {
+  router.replace({ path: route.path, query: {
+    ...route.query,
+    type: businessType.value,
+    distance: distanceKm.value
+  } });
 });
 
 
@@ -62,34 +68,41 @@ watch(businessType, () => {
         <div class="w-full md:w-2/3-minus-2.5rem">
           <ResultComponent>
             <!-- API RESULTS -->
-            <div>
-              <p>Searched for: {{ formattedQuery }}</p>
+            <CmpSpacer>
+              <CmpHeading h="3">Searched for: {{ formattedQuery }}</CmpHeading>
+              <p>
+                Which is:
+                {{ data }}
+              </p>
 
-              Which is:
-              {{ data }}
+              <CmpHeading h="3">Search radius</CmpHeading>
+              <input v-model="distanceKm" type="range" min="1" max="50">{{ distanceKm }} (kms)
 
-              <div>
-                Types:
-                <select v-model="businessType">
-                  <option
-                          v-for="type in businessTypes"
-                          :key="type.id"
-                          :value="type.id">
-                    {{ type.name }}
-                  </option>
-                </select>
-              </div>
-              <template v-if="branches.length > 0">
-                <ul v-for="branch in branches">
-                  <li>{{ branch.business.name }} | {{ branch.name }} </li>
-                  <button @click="contactsStore.add(branch)">Add to group</button>
+              <CmpHeading h="3">Filter by business type</CmpHeading>
+              <select v-model="businessType">
+                <option v-for="optionType in businessTypes" :key="optionType.id" :value="optionType.id">
+                  {{ optionType.name }}
+                </option>
+              </select>
+
+              <CmpHeading h="3">Results</CmpHeading>
+              <template v-if="status === 'pending'">
+                loading
+              </template>
+              <template v-else-if="branches.length > 0">
+                <ul v-for="branch in branches" :key="branch.id">
+                  <li>
+                    <CmpHeading h="4">{{ branch.business_name }} | {{ branch.name }}</CmpHeading>
+                    <p>{{ (branch.dist_meters / 1000).toFixed(2) }}km from {{ formattedQuery }}</p>
+                    <button @click="contactsStore.add(branch)">Add to group</button>
+                  </li>
                 </ul>
               </template>
               <template v-else>
                 no results
               </template>
 
-            </div>
+            </CmpSpacer>
           </ResultComponent>
           <ResultComponent>
             <nuxt-img
@@ -134,7 +147,7 @@ watch(businessType, () => {
 
 
           <pre>
-            {{ contactsStore.contacts.map((c) => c.name) }}
+            {{ contactsStore.contacts.map((c) => `${c.business_name} | ${c.name}`) }}
           </pre>
         </aside>
       </div>
