@@ -7,15 +7,18 @@
     small="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720210549/upsticks%20diredtory/mobile-home-page_v2r3y7.jpg"
   >
     <figcaption class="bg-[#2B5773] lg:pt-9 px-6 py-8 lg:pb-12 lg:px-9 lg:max-w-screen-md mx-auto lg:rounded-lg mg:rounded-lg lg:mt-[-150px] relative">
-      <div class="mx-auto text-center text-[#E2883C]">
-        <h2 class="text-4xl font-extrabold mb-4">Thinking of moving?</h2>
-        <p class="text-base text-white max-w-[450px] mx-auto">
-          Search the UK's finest choice of estate agents, conveyancers, removals and mortgage brokers
-        </p>
-        <div class="mt-10">
-          <Search/>
-        </div>
-      </div>
+
+      <CmpSpacer space="xl" class="mx-auto text-center text-[#E2883C]">
+        <CmpSpacer>
+          <CmpHeading h="2" class="mb-4">Thinking of moving?</CmpHeading>
+          <p class="text-base text-white max-w-[450px] mx-auto">
+            Search the UK's finest choice of estate agents, conveyancers, removals and mortgage brokers
+          </p>
+        </CmpSpacer>
+
+        <Search/>
+
+      </CmpSpacer>
     </figcaption>
   </HeroComponent>
 
