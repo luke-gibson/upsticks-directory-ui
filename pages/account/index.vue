@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const user = useSupabaseUser();
+definePageMeta({
+  middleware: ['auth']
+});
+
 const client = useSupabaseClient();
 
 const signOut = async () => {
@@ -7,9 +10,14 @@ const signOut = async () => {
   navigateTo('/');
 };
 
-definePageMeta({
-  middleware: ['auth']
-});
+const loggedInUser = await useLoggedInUser();
+
+// get branches for this business
+const { data: branches } = await client
+  .from('branch')
+  .select(`*`)
+  .eq('business_id', loggedInUser.business.id);
+
 </script>
 
 <template>
@@ -18,8 +26,16 @@ definePageMeta({
 
         <button @click="signOut">Sign out</button>
 
-        <p>logged in as {{ user.email }}</p>
+        <CmpHeading h="3">Branches</CmpHeading>
+        <NuxtLink to="/account/branch/add">Add another branch</NuxtLink>
+        <ul>
+          <li v-for="branch in branches" :key="branch.id">
+              {{ branch.name }}
+          </li>
+        </ul>
 
-        <pre>{{ user }}</pre>
+        <p>Logged in user:</p>
+
+        <pre>{{ loggedInUser }}</pre>
     </CmpSpacer>
 </template>
