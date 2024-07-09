@@ -3,11 +3,11 @@ export const useContactsStore = defineStore('ContactsStore', () => {
 
     const add = (branch) => {
         contacts.value.push(branch);
-    }
+    };
 
     return {
         contacts,
         add
-    }
+    };
 
 });

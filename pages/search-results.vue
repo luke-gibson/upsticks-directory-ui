@@ -9,15 +9,14 @@ const contactsStore = useContactsStore();
 const client = useSupabaseClient();
 const formattedQuery = ref(route.query.q);
 
-const { data } = await useFetch(`https://api.postcodes.io/postcodes/${route.query.q}`, {
+const { data: postcode } = await useFetch(`https://api.postcodes.io/postcodes/${route.query.q}`, {
   transform: (response) => {
     return {
       longitude: response.result.longitude,
       latitude: response.result.latitude,
-    }
+    };
   },
-})
-
+});
 
 const { data: businessTypes } = await client.from('business_type').select('*');
 const businessType = ref(route.query.type ?? businessTypes[0].id);
@@ -28,15 +27,15 @@ const { data: branches, status } = useAsyncData(
   'branches',
   async () => {
     const { data } = await client.rpc('nearby_branches', {
-      long: -1.062477,
-      lat: 50.898349,
+      long: postcode.value?.longitude,
+      lat: postcode.value?.latitude,
     })
     .lt('dist_meters', distanceKm.value * 1000)
-    .eq('business_type_id', businessType.value)
+    .eq('business_type_id', businessType.value);
     return data;
   },
   { watch: [businessType, distanceKm] }
-)
+);
 
 
 watch([businessType, distanceKm], () => {
@@ -72,7 +71,7 @@ watch([businessType, distanceKm], () => {
               <CmpHeading h="3">Searched for: {{ formattedQuery }}</CmpHeading>
               <p>
                 Which is:
-                {{ data }}
+                {{ postcode }}
               </p>
 
               <CmpHeading h="3">Search radius</CmpHeading>
