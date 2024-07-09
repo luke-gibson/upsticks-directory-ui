@@ -1,13 +1,13 @@
 export const useContactsStore = defineStore('ContactsStore', () => {
-    const contacts = ref([]);
+  const contacts = ref([]);
 
-    const add = (branch) => {
-        contacts.value.push(branch);
-    };
+  const add = (branch) => {
+    contacts.value.push(branch);
+  };
 
-    return {
-        contacts,
-        add
-    };
+  return {
+    contacts,
+    add
+  };
 
 });

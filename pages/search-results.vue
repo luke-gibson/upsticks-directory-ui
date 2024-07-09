@@ -30,8 +30,8 @@ const { data: branches, status } = useAsyncData(
       long: postcode.value?.longitude,
       lat: postcode.value?.latitude,
     })
-    .lt('dist_meters', distanceKm.value * 1000)
-    .eq('business_type_id', businessType.value);
+      .lt('dist_meters', distanceKm.value * 1000)
+      .eq('business_type_id', businessType.value);
     return data;
   },
   { watch: [businessType, distanceKm] }
