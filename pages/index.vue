@@ -6,12 +6,12 @@
     medium="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720099452/upsticks%20diredtory/tablet-home-page_xfrd3l.jpg"
     small="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720210549/upsticks%20diredtory/mobile-home-page_v2r3y7.jpg"
   >
-    <figcaption class="bg-[#2B5773] lg:pt-9 px-6 py-8 lg:pb-12 lg:px-9 lg:max-w-screen-md mx-auto lg:rounded-lg mg:rounded-lg lg:mt-[-150px] relative">
+    <figcaption class="flex bg-[#2B5773] lg:pt-9 px-6 py-8 lg:pb-12 lg:px-9 lg:max-w-screen-md mx-auto lg:rounded-lg mg:rounded-lg lg:mt-[-150px] relative">
 
       <CmpSpacer space="xl" class="mx-auto text-center text-[#E2883C]">
         <CmpSpacer>
-          <CmpHeading h="2" class="mb-4">Thinking of moving?</CmpHeading>
-          <p class="text-base text-white max-w-[450px] mx-auto">
+          <CmpHeading h="1" class="mb-4 text-center block">Thinking of moving?</CmpHeading>
+          <p class="text-base text-white text-center mb-8 max-w-[450px] mx-auto">
             Search the UK's finest choice of estate agents, conveyancers, removals and mortgage brokers
           </p>
         </CmpSpacer>

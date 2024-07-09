@@ -94,18 +94,23 @@ watch([businessType, distanceKm], () => {
         <div class="w-1/4 flex flex-col">
           <CmpHeading h="3" class="w-full mb-2">Search radius</CmpHeading>
           <div class="flex">
-            <input v-model="distanceKm" type="range" min="1" max="50" class="mr-5" >
+            <input v-model="distanceKm" type="range" min="1" max="50" class="mr-5" />
             {{ distanceKm }} (kms)
           </div>
         </div>
-        
       </div>
       <div class="md:container mx-auto flex flex-wrap items-start relative">
         <div class="w-full md:w-2/3-minus-2.5rem">
           <template v-if="status === 'pending'"> loading </template>
           <template v-else-if="branches.length > 0">
             <ResultComponent v-for="branch in branches" :key="branch.id">
-              <img class="rounded-l-lg max-w-80" src="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720556083/upsticks%20diredtory/placeholder_w9lxiu.jpg" alt="placeholder">
+              <div class="h-full max-w-80 rounded-l-lg">
+                <nuxt-img
+                  class="rounded-l-lg object-cover"
+                  src="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720559105/placeholder_hf9t8s.jpg"
+                  alt="placeholder"
+                />
+              </div>
               <CmpSpacer class="py-4 px-6">
                 <CmpHeading h="4">
                   {{ branch.business_name }} | {{ branch.name }}
@@ -115,20 +120,32 @@ watch([businessType, distanceKm], () => {
                   {{ formattedQuery }}
                 </p>
                 <p class="mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae augue sit amet lacus viverra rutrum. Sed at vulputate urna. Donec ex dui, ornare vel ante nec.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae augue
+                  sit amet lacus viverra rutrum. Sed at vulputate urna. Donec ex dui,
+                  ornare vel ante nec.
                 </p>
                 <div class="flex">
-                  <button @click="contactsStore.add(branch)" class="mt-8 bg-[#E2883C] hover:bg-[#be7335] text-[#2B5773] text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none mr-6">Add to group</button>                  
-                  <button class="mt-8 bg-[#E2883C] hover:bg-[#be7335] text-[#2B5773] text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none">More info</button>
+                  <button
+                    @click="contactsStore.add(branch)"
+                    class="mt-8 bg-[#E2883C] hover:bg-[#be7335] text-[#2B5773] text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none mr-6"
+                  >
+                    Add to group
+                  </button>
+                  <button
+                    class="mt-8 bg-[#E2883C] hover:bg-[#be7335] text-[#2B5773] text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none"
+                  >
+                    More info
+                  </button>
                 </div>
-                
               </CmpSpacer>
             </ResultComponent>
           </template>
           <template v-else> no results </template>
         </div>
 
-        <aside class="bg-white border rounded-lg shadow md:ml-10 p-8 w-full md:w-1/3 md:sticky top-0">
+        <aside
+          class="bg-white border rounded-lg shadow md:ml-10 p-8 w-full md:w-1/3 md:sticky top-0"
+        >
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             Group Contacts
           </h5>
