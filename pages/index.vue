@@ -10,7 +10,7 @@
 
       <CmpSpacer space="xl" class="mx-auto text-center text-[#E2883C]">
         <CmpSpacer>
-          <CmpHeading h="1" class="mb-4 text-center block">Thinking of moving?</CmpHeading>
+          <CmpHeading h="1" class="mb-4 text-center block text-4xl font-bold">Thinking of moving?</CmpHeading>
           <p class="text-base text-white text-center mb-8 max-w-[450px] mx-auto">
             Search the UK's finest choice of estate agents, conveyancers, removals and mortgage brokers
           </p>

@@ -51,6 +51,11 @@ watch([businessType, distanceKm], () => {
     },
   });
 });
+
+const removeContact = (id: string) => {
+  contactsStore.remove(id);
+};
+
 </script>
 
 <template>
@@ -64,15 +69,12 @@ watch([businessType, distanceKm], () => {
       <figcaption
         class="absolute z-10 top-1/2 transform translate-y-[-50%] left-2 right-2"
       >
-        <CmpHeading h="1" class="text-white">
-          Search Results for {{ formattedQuery }}
+        <CmpHeading h="1" class="text-white text-3xl font-bold">
+          Search Results for {{ formattedQuery.toUpperCase() }}
         </CmpHeading>
       </figcaption>
     </HeroComponent>
-    <!-- <section>
-      <CmpHeading h="3">Searched for: {{ formattedQuery }}</CmpHeading>
-      <p>Which is: {{ postcode }}</p>
-    </section> -->
+
     <section class="mx-auto py-8 px-4 flex flex-col bg-[#f2f2f2] min-h-[50vh]">
       <div class="md:container mx-auto flex items-top mb-8">
         <div class="w-1/4 mr-16">
@@ -94,8 +96,8 @@ watch([businessType, distanceKm], () => {
         <div class="w-1/4 flex flex-col">
           <CmpHeading h="3" class="w-full mb-2">Search radius</CmpHeading>
           <div class="flex">
-            <input v-model="distanceKm" type="range" min="1" max="50" class="mr-5" />
-            {{ distanceKm }} (kms)
+            <input v-model="distanceKm" type="range" min="1" max="50" class="mr-5 mt-3">
+            <span class="mt-2">{{ distanceKm }} (kms)</span>
           </div>
         </div>
       </div>
@@ -113,11 +115,11 @@ watch([businessType, distanceKm], () => {
               </div>
               <CmpSpacer class="py-4 px-6">
                 <CmpHeading h="4">
-                  {{ branch.business_name }} | {{ branch.name }}
+                  <h2 class="text-2xl">{{ branch.business_name }} | {{ branch.name }}</h2>
                 </CmpHeading>
                 <p>
                   {{ (branch.dist_meters / 1000).toFixed(2) }}km from
-                  {{ formattedQuery }}
+                  {{ formattedQuery.toUpperCase() }}
                 </p>
                 <p class="mt-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae augue
@@ -150,12 +152,24 @@ watch([businessType, distanceKm], () => {
             Group Contacts
           </h5>
           <p>
-            Add Estate Agents to your group contact and email them together with your
+            Add businesses to your group contact and email them together with your
             requests.
           </p>
-          <pre>
-            {{ contactsStore.contacts.map((c) => `${c.business_name} | ${c.name}`) }}
-          </pre>
+          <ul class="mt-4">
+            <!-- Debug output -->
+            <li v-if="contactsStore.contacts.length === 0">No contacts added yet.</li>
+            <li v-for="contact in contactsStore.contacts" :key="contact.id" class="flex items-center p-3 border mb-4 rounded-md justify-between">
+              {{ contact.business_name }} | {{ contact.name }} 
+              <IconsBin 
+                class="ml-3 cursor-pointer bg-red-700 text-white h-7 w-7 p-1 rounded-lg hover:bg-[#E2883C] hover:text-[#2B5773] transition-colors" 
+                @click="removeContact(contact.id)"
+              />
+            </li>
+          </ul>
+          <button v-if="contactsStore.contacts.length != 0"
+                    class="mt-2 bg-[#E2883C] hover:bg-[#be7335] text-[#2B5773] text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none mr-6">
+                    Email Group
+                  </button>
         </aside>
       </div>
     </section>

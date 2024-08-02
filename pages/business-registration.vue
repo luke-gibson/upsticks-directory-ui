@@ -8,7 +8,7 @@
                    medium="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720099452/upsticks%20diredtory/tablet-home-page_xfrd3l.jpg"
                    small="https://res.cloudinary.com/dqqarxqbu/image/upload/v1720210549/upsticks%20diredtory/mobile-home-page_v2r3y7.jpg">
       <figcaption class="absolute z-10 top-1/2 transform translate-y-[-50%] left-2 right-2">
-        <CmpHeading h="1" class="text-white">Business Registration</CmpHeading>
+        <CmpHeading h="1" class="text-white font-bold text-3xl">Business Registration</CmpHeading>
         <p class="text-white mt-1">Already registered? No problem, you can just <NuxtLink class="font-bold" to="/login">
             log in</NuxtLink>.</p>
       </figcaption>

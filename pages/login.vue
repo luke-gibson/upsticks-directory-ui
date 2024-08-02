@@ -29,19 +29,6 @@ const login = async () => {
       </figcaption>
     </HeroComponent>
 
-    <!-- <div class="border-4">
-
-      <CmpSpacer>
-        <div v-if="uiError">
-          {{ uiError }}
-        </div>
-        <CmpHeading h="3">Login</CmpHeading>
-        email: <input v-model="email" type="text">
-        password: <input v-model="password" type="text">
-        <button @click="login">login</button>
-      </CmpSpacer>
-    </div> -->
-
     <section class="mx-auto bg-[#f2f2f2] h-[50vh]">
       <form class="w-full max-w-sm mx-auto py-20">
         <div class="md:flex md:items-center mb-6">
